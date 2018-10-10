@@ -1,0 +1,763 @@
+#:import CheckBox kivy.uix.checkbox
+#:import Label kivy.uix.label
+#:import Factory kivy.factory.Factory
+
+
+<CustomLabel@Label>
+    color: 0.6, 0.6, 0.6, 1
+    text_size: self.size
+    font_size: '14dp'
+    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    halign: 'left'
+    valign: 'middle'
+
+<InfoLabel@Label>
+    color: 0.6, 0.6, 0.6, 1
+    text_size: self.size
+    font_size: '12dp'
+    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    halign: 'left'
+    valign: 'top'
+
+
+<CustomButton@Button>:
+    font_size: '18dp'
+    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_color: 1,1,1,1
+    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/button.png'
+    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/button_down.png'
+
+<InfoButton@Button>:
+    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button.png'
+    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_down.png'
+
+
+<InfoButtonSmall@Button>:
+    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_small.png'
+    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_small_down.png'
+
+
+<CloseButton@Button>:
+    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/close_button.png'
+    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/close_button.png'
+    size_hint: None, None
+    size: '27dp', '27dp'
+
+<ExceptButton@Button>:
+    font_size: '16dp'
+    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_color: 1,1,1,1
+    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/error_mssg_button.png'
+    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/error_mssg_buttton.png'
+
+
+<MyCheckBox@CheckBox>:
+    background_checkbox_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/checkbox_normal.png'
+    background_checkbox_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/checkbox_down.png'
+
+<InfoPop>:
+    on_open: root.reinitialize_text()
+    auto_dismiss: False
+    size_hint: None, None
+    size: '495dp', '515.9dp'
+    background_color: 0.9, 0.9, 0.9, 0.5
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        canvas.before:
+            Rectangle:
+                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+
+
+            FloatLayout:
+                size_hint_y: 0.04
+
+                CloseButton:
+                    pos_hint: {"right": 1, "top": 1}
+                    on_press: root.dismiss()
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: '15dp'
+                size_hint_y: 0.96
+
+                canvas.before:
+                    Rectangle:
+                        source: root.text
+                        pos: self.pos
+                        size: self.size
+<ExceptPop>:
+    on_open: root.reinitialize_text()
+    auto_dismiss: False
+    size_hint: None, None
+    size: '495dp', '515.9dp'
+    background_color: 0.9, 0.9, 0.9, 0.5
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        canvas.before:
+            Rectangle:
+                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+
+
+            FloatLayout:
+                size_hint_y: 0.04
+
+                CloseButton:
+                    pos_hint: {"right": 1, "top": 1}
+                    on_press: root.dismiss()
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: '15dp'
+                size_hint_y: 0.61
+
+                canvas.before:
+                    Rectangle:
+                        source: root.text
+                        pos: self.pos
+                        size: self.size
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: '15dp'
+                size_hint_y: 0.2
+
+                TextInput:
+                    id: user_comments
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    hint_text: "additional comments"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: 0.65
+
+                ExceptButton:
+                    on_press: root.send_error_mssg(user_comments.text)
+                    size_hint_x: 0.30
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: '15dp'
+                size_hint_y: 0.15
+
+<MssgPop>:
+    auto_dismiss: False
+    size_hint: None, None
+    size: '380dp', '250dp'
+    background_color: 0.9, 0.9, 0.9, 0.5
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        canvas.before:
+            Rectangle:
+                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            FloatLayout:
+                size_hint_y: 0.04
+
+                CloseButton:
+                    pos_hint: {"right": 1, "top": 1}
+                    on_press: root.dismiss()
+
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: '15dp'
+                size_hint_y: '0.8'
+
+                Label:
+                    text: root.text
+                    color: 0.6, 0.6, 0.6, 1
+                    text_size: self.size
+                    font_size: '14dp'
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    halign: 'center'
+                    valign: 'middle'
+
+ActionChoices:
+
+<ActionChoices>:
+    id: action_choices
+    orientation: 'vertical'
+    height: self.minimum_height
+    latex_text_input: latex_input
+    latex_text_output: latex_output
+    term_to_factor_str: input_term_to_factor
+    term_to_replace_str: term_to_replace
+    replacement_term_str: replacement_term
+    indices_to_replace_str: indices_to_replace
+    replacement_indices_str: replacement_indices
+    symmetric_tensors_str: symmetric_tensors
+    spacing: '10dp'
+    padding: '12dp'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 1
+
+        TextInput:
+            id: latex_input
+            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            hint_text: "LaTeX equation input:"
+            font_size: '13dp'
+            multiline: True
+            size_hint: .9, 0.95
+
+        InfoButton:
+            size_hint: .07, 1
+            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/input_specifications.png")
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.46
+
+            BoxLayout:
+                orientation: 'horizontal'
+
+                MyCheckBox:
+                    id: 'initial_equation'
+                    on_active: root.clicked_include_eq(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "include initial equation in output?"
+                    size_hint_x: .80
+            BoxLayout:
+                orientation: 'horizontal'
+
+                MyCheckBox:
+                    id: 'words'
+                    on_active: root.clicked_include_text(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "include short description in output?"
+                    size_hint_x: .80
+
+        TextInput:
+            id: symmetric_tensors
+            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            hint_text: "(optional) comma-separated list of symmetric tensor symbols (eg. h, T)"
+            font_size: '13dp'
+            multiline: True
+            size_hint: .47, 1
+            valign: 'middle'
+
+        InfoButton:
+            size_hint: .07, 0.95
+            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/input_customization.png")
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 0.1
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 2.3
+
+        canvas.before:
+            Rectangle:
+                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/multiply_corner.png"
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_x: 0.9
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.9
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'FOIL_and_distribute'
+                    on_active: root.clicked_foil(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "FOIL out terms, distributing derivatives when necessary (recommended)"
+                    size_hint_x: .80
+
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'distribute_partial_derivatives'
+                    on_active: root.clicked_dist_part(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "distribute partial derivatives"
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'FOIL'
+                    on_active: root.clicked_foil_no_dist(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "FOIL out terms without distributing derivatives"
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.15
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.053
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.1
+
+            InfoButtonSmall:
+                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/multiply_info.png")
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.7
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.015
+
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 2.3
+
+        canvas.before:
+            Rectangle:
+                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/contract_corner.png'
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.9
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 1.9
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'contract deltas and etas'
+                    on_active: root.clicked_contract(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "contract etas and deltas"
+                    size_hint_x: .8
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'deltas'
+                    value: root.deltas
+                    on_active: root.clicked_deltas(self.active)
+                    size_hint_x: .2
+                CustomLabel:
+                    text: "contract only deltas"
+                    size_hint_x: .8
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'etas'
+                    on_active: root.clicked_etas(self.active)
+                    size_hint_x: .2
+
+                CustomLabel:
+                    text: "contract only etas"
+                    size_hint_x: .8
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.15
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.053
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.1
+
+            InfoButtonSmall:
+                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/contract_info.png")
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.7
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.015
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 2
+
+        canvas:
+            Rectangle:
+                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/factor_corner.png'
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.9
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 1.6
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'gcf'
+                    on_active: root.clicked_factor_gcf(self.active)
+                    size_hint_x: 0.2
+                CustomLabel:
+                    text: "factor out GCF"
+                    size_hint_x: .8
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'factor_term'
+                    on_active: root.clicked_factor_term(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "factor out user specified term "
+                    size_hint_x: .34
+
+                TextInput:
+                    id: input_term_to_factor
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    hint_text: "term to factor"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: .4
+
+                CustomLabel:
+                    text: '     '
+                    size_hint_x: .06
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.3
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.053
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.25
+
+            InfoButtonSmall:
+                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_info.png")
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.2
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.015
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 2
+
+        canvas:
+            Rectangle:
+                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_corner.png'
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.9
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 2
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'replace_indices'
+                    on_active: root.clicked_replace_indices(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: 'replace indices '
+                    size_hint_x: .17
+
+                TextInput:
+                    id: indices_to_replace
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+
+                    hint_text: "indices to replace, list"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: .29
+
+                CustomLabel:
+                    text: '   '
+                    size_hint_x: .03
+
+                TextInput:
+                    id: replacement_indices
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    hint_text: "replacement indices, list"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: .29
+
+                CustomLabel:
+                    text: '     '
+                    size_hint_x: .02
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: .3
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'replace_terms'
+                    on_active: root.clicked_replace_terms(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: 'replace terms '
+                    size_hint_x: .17
+
+
+                TextInput:
+                    id: term_to_replace
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    hint_text: "term to replace"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: .29
+
+                CustomLabel:
+                    text: '     '
+                    size_hint_x: .03
+
+                TextInput:
+                    id: replacement_term
+                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    hint_text: "replacement term"
+                    font_size: '11dp'
+                    multiline: True
+                    size_hint_x: .29
+
+                CustomLabel:
+                    text: '     '
+                    size_hint_x: .02
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.3
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.053
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.1
+
+            InfoButtonSmall:
+                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_info.png")
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.3
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.015
+
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 2.9
+
+        canvas.before:
+            Rectangle:
+                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/sort_corner.png'
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.9
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 1.6
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'combine_num'
+                    on_active: root.clicked_combine_like_terms_num(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: 'combine like terms differing only by a numerical factor '
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'combine'
+                    on_active: root.clicked_combine_like_terms(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: 'combine like terms differing by any (numerical or symbolic) coefficient '
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'sort_each'
+                    on_active: root.clicked_sort_each(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "sort the tensors in each term by number of derivatives (least to greatest)"
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: "horizontal"
+
+                MyCheckBox:
+                    id: 'sort_terms'
+                    on_active: root.clicked_sort_terms(self.active)
+                    size_hint_x: 0.2
+
+                CustomLabel:
+                    text: "sort terms by number of derivatives (least to greatest)"
+                    size_hint_x: .80
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.2
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.053
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 1.9
+
+            InfoButtonSmall:
+                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/sort_info.png")
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.7
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.015
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.1
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 1.8
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.28
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.2
+
+            CustomButton:
+                text: "Compute"
+                on_press: root.compute()
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: 0.2
+
+
+        TextInput:
+            id: latex_output
+            size_hint_y: 1
+
+            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            hint_text: "LaTeX equation output:"
+            font_size: '13dp'
+            multiline: True
+
+
+        InfoButton:
+            size_hint: .099, 0.55
+            pos_hint: {"right":1,"top":0.76}
+            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/output_info.png")
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: 0.2
+
