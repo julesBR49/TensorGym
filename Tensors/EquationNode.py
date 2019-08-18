@@ -1,5 +1,5 @@
-from Summation import Summation
-from Sign import Sign
+from Tensors.Summation import Summation
+from Tensors.Sign import Sign
 class EquationNode:
 
     def __init__(self, element=None, brackets=False):

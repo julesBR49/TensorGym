@@ -1,11 +1,11 @@
-from EquationNode import EquationNode
-from Sign import Sign
-from MultGroup import MultGroup
-from TensorCoefficients import TensorCoefficients
-from Coefficient import Coefficient
-from SymbolCo import SymbolCo
-from Fraction import Fraction
-from Summation import Summation
+from Tensors.EquationNode import EquationNode
+from Tensors.Sign import Sign
+from Tensors.MultGroup import MultGroup
+from Tensors.TensorCoefficients import TensorCoefficients
+from Tensors.Coefficient import Coefficient
+from Tensors.SymbolCo import SymbolCo
+from Tensors.Fraction import Fraction
+from Tensors.Summation import Summation
 import copy
 class EquationTree:
     def __init__(self, root=None):

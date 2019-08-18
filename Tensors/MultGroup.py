@@ -1,14 +1,14 @@
-from Fraction import Fraction
-from Tensor import Tensor
-from SymbolCo import SymbolCo
-from Delta import Delta
-from Eta import Eta
-from Partial import Partial
-from Variation import Variation
-from Summation import Summation
-from TensorCoefficients import TensorCoefficients
-from Coefficient import Coefficient
-from Gemma import Gemma
+from Tensors.Fraction import Fraction
+from Tensors.Tensor import Tensor
+from Tensors.SymbolCo import SymbolCo
+from Tensors.Delta import Delta
+from Tensors.Eta import Eta
+from Tensors.Partial import Partial
+from Tensors.Variation import Variation
+from Tensors.Summation import Summation
+from Tensors.TensorCoefficients import TensorCoefficients
+from Tensors.Coefficient import Coefficient
+from Tensors.Gemma import Gemma
 import copy
 class MultGroup:
     ##

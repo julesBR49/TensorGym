@@ -1,6 +1,6 @@
-from SymmetryProperties import SymmetryProperties
-from Partial import Partial
-from TypeError import TypeError
+from Tensors.SymmetryProperties import SymmetryProperties
+from Tensors.Partial import Partial
+from Tensors.TypeError import TypeError
 class Delta:
 
     def __init__(self, sym, partials=None):

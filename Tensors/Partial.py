@@ -1,4 +1,4 @@
-from IndexException import IndexException
+from Tensors.IndexException import IndexException
 class Partial:
 
     def __init__(self, index):

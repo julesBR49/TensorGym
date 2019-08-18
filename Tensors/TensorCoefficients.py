@@ -1,6 +1,6 @@
 import copy
-from Coefficient import Coefficient
-from Fraction import Fraction
+from Tensors.Coefficient import Coefficient
+from Tensors.Fraction import Fraction
 class TensorCoefficients:
 
     def __init__(self, cos):

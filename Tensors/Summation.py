@@ -1,9 +1,9 @@
-from TypeError import TypeError
-from Partial import Partial
-from Fraction import Fraction
-from TensorCoefficients import TensorCoefficients
-from SymbolCo import SymbolCo
-from Coefficient import Coefficient
+from Tensors.TypeError import TypeError
+from Tensors.Partial import Partial
+from Tensors.Fraction import Fraction
+from Tensors.TensorCoefficients import TensorCoefficients
+from Tensors.SymbolCo import SymbolCo
+from Tensors.Coefficient import Coefficient
 import copy
 class Summation:
 

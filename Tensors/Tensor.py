@@ -1,9 +1,9 @@
 _author_ = 'Bruce-Robertson'
-from TypeError import TypeError
-from SymmetryProperties import SymmetryProperties
-from IndexException import IndexException
-from Index import Index
-from Gemma import Gemma
+from Tensors.TypeError import TypeError
+from Tensors.SymmetryProperties import SymmetryProperties
+from Tensors.IndexException import IndexException
+from Tensors.Index import Index
+from Tensors.Gemma import Gemma
 import copy
 class Tensor:
 

@@ -6,20 +6,19 @@ kivy.config.Config.set('graphics', 'resizable', False)
 kivy.config.Config.set('graphics', 'position', 'custom')
 kivy.config.Config.set('graphics', 'top', 40)
 kivy.config.Config.set('graphics', 'left', 160)
-Config.set('kivy', 'window_icon', '../Kivy/images/TensorGym1024-1x.png')
+Config.set('kivy', 'window_icon', './images/TensorGym1024-1x.png')
 from kivy.app import App
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
 from kivy.core.window import Window
-from Equation import Equation
+from Tensors.Equation import Equation
 from kivy.uix.modalview import ModalView
 from kivy.properties import StringProperty
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from ../Kivy import TensorGym.kv
 import os, sys, traceback
 
 
@@ -29,6 +28,7 @@ class InfoPop(ModalView):
 
     def get_view(self):
         return self.view
+
 
     def set_text(self, text):
         self.text = text

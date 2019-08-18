@@ -1,5 +1,5 @@
-from Fraction import Fraction
-from SymbolCo import SymbolCo
+from Tensors.Fraction import Fraction
+from Tensors.SymbolCo import SymbolCo
 # a chunk that holds coefficient information: a sign and up to one number and one symbolic coefficient
 class Coefficient:
     def __init__(self, sign="+", numCo=None, symCo=None):

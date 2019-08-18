@@ -1,4 +1,4 @@
-from Gemma import Gemma
+from Tensors.Gemma import Gemma
 class Index:
     #symbol is string, up = 1, down = 0
     def __init__(self, symbol, height=1, owner='', summ=False, crossSum=False, sumType=None):

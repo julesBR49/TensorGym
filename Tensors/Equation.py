@@ -1,18 +1,18 @@
-from SymmetryProperties import SymmetryProperties
-from IndexException import IndexException
-from SymbolCo import SymbolCo
-from Fraction import Fraction
-from Delta import Delta
-from Eta import Eta
-from Index import Index
-from Partial import Partial
-from Tensor import Tensor
-from Variation import Variation
-from MultGroup import MultGroup
-from Summation import Summation
-from EquationTree import EquationTree
-from EquationNode import EquationNode
-from Sign import Sign
+from Tensors.SymmetryProperties import SymmetryProperties
+from Tensors.IndexException import IndexException
+from Tensors.SymbolCo import SymbolCo
+from Tensors.Fraction import Fraction
+from Tensors.Delta import Delta
+from Tensors.Eta import Eta
+from Tensors.Index import Index
+from Tensors.Partial import Partial
+from Tensors.Tensor import Tensor
+from Tensors.Variation import Variation
+from Tensors.MultGroup import MultGroup
+from Tensors.Summation import Summation
+from Tensors.EquationTree import EquationTree
+from Tensors.EquationNode import EquationNode
+from Tensors.Sign import Sign
 import copy
 class Equation:
     ##

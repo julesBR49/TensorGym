@@ -1,5 +1,5 @@
-from Index import Index
-from IndexException import IndexException
+from Tensors.Index import Index
+from Tensors.IndexException import IndexException
 import copy
 class SymmetryProperties:
 
