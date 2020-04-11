@@ -7,7 +7,7 @@
     color: 0.6, 0.6, 0.6, 1
     text_size: self.size
     font_size: '14dp'
-    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_name: './fonts/candara.ttf'
     halign: 'left'
     valign: 'middle'
 
@@ -15,45 +15,45 @@
     color: 0.6, 0.6, 0.6, 1
     text_size: self.size
     font_size: '12dp'
-    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_name: './fonts/candara.ttf'
     halign: 'left'
     valign: 'top'
 
 
 <CustomButton@Button>:
     font_size: '18dp'
-    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_name: './fonts/candara.ttf'
     font_color: 1,1,1,1
-    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/button.png'
-    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/button_down.png'
+    background_normal: './images/button.png'
+    background_down: './images/button_down.png'
 
 <InfoButton@Button>:
-    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button.png'
-    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_down.png'
+    background_normal: './images/info_button.png'
+    background_down: './images/info_button_down.png'
 
 
 <InfoButtonSmall@Button>:
-    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_small.png'
-    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/info_button_small_down.png'
+    background_normal: './images/info_button_small.png'
+    background_down: './images/info_button_small_down.png'
 
 
 <CloseButton@Button>:
-    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/close_button.png'
-    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/close_button.png'
+    background_normal: './images/close_button.png'
+    background_down: './images/close_button.png'
     size_hint: None, None
     size: '27dp', '27dp'
 
 <ExceptButton@Button>:
     font_size: '16dp'
-    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+    font_name: './fonts/candara.ttf'
     font_color: 1,1,1,1
-    background_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/error_mssg_button.png'
-    background_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/error_mssg_buttton.png'
+    background_normal: './images/error_mssg_button.png'
+    background_down: './images/error_mssg_buttton.png'
 
 
 <MyCheckBox@CheckBox>:
-    background_checkbox_normal: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/checkbox_normal.png'
-    background_checkbox_down: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/checkbox_down.png'
+    background_checkbox_normal: './images/checkbox_normal.png'
+    background_checkbox_down: './images/checkbox_down.png'
 
 <InfoPop>:
     on_open: root.reinitialize_text()
@@ -67,7 +67,7 @@
 
         canvas.before:
             Rectangle:
-                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                source:"./images/white_background.png"
                 pos: self.pos
                 size: self.size
 
@@ -104,7 +104,7 @@
 
         canvas.before:
             Rectangle:
-                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                source:"./images/white_background.png"
                 pos: self.pos
                 size: self.size
 
@@ -137,7 +137,7 @@
 
                 TextInput:
                     id: user_comments
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     hint_text: "additional comments"
                     font_size: '11dp'
                     multiline: True
@@ -163,7 +163,7 @@
 
         canvas.before:
             Rectangle:
-                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/white_background.png"
+                source:"./images/white_background.png"
                 pos: self.pos
                 size: self.size
 
@@ -187,7 +187,7 @@
                     color: 0.6, 0.6, 0.6, 1
                     text_size: self.size
                     font_size: '14dp'
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     halign: 'center'
                     valign: 'middle'
 
@@ -218,7 +218,7 @@ ActionChoices:
 
         TextInput:
             id: latex_input
-            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            font_name: './fonts/candara.ttf'
             hint_text: "LaTeX equation input:"
             font_size: '13dp'
             multiline: True
@@ -226,7 +226,7 @@ ActionChoices:
 
         InfoButton:
             size_hint: .07, 1
-            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/input_specifications.png")
+            on_release: root.open_pop("./images/input_specifications.png")
 
 
     BoxLayout:
@@ -262,7 +262,7 @@ ActionChoices:
 
         TextInput:
             id: symmetric_tensors
-            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            font_name: './fonts/candara.ttf'
             hint_text: "(optional) comma-separated list of symmetric tensor symbols (eg. h, T)"
             font_size: '13dp'
             multiline: True
@@ -271,7 +271,7 @@ ActionChoices:
 
         InfoButton:
             size_hint: .07, 0.95
-            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/input_customization.png")
+            on_release: root.open_pop("./images/input_customization.png")
 
     BoxLayout:
         orientation: "horizontal"
@@ -283,7 +283,7 @@ ActionChoices:
 
         canvas.before:
             Rectangle:
-                source:"/Users/reaghbruce-robertson/PycharmProjects/Tensors/multiply_corner.png"
+                source:"./images/multiply_corner.png"
                 pos: self.pos
                 size: self.size
 
@@ -345,7 +345,7 @@ ActionChoices:
                 size_hint_y: 1.1
 
             InfoButtonSmall:
-                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/multiply_info.png")
+                on_release: root.open_pop("./images/multiply_info.png")
 
             BoxLayout:
                 orientation: "horizontal"
@@ -362,7 +362,7 @@ ActionChoices:
 
         canvas.before:
             Rectangle:
-                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/contract_corner.png'
+                source: './images/contract_corner.png'
                 pos: self.pos
                 size: self.size
 
@@ -423,7 +423,7 @@ ActionChoices:
                 size_hint_y: 1.1
 
             InfoButtonSmall:
-                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/contract_info.png")
+                on_release: root.open_pop("./images/contract_info.png")
 
             BoxLayout:
                 orientation: "horizontal"
@@ -439,7 +439,7 @@ ActionChoices:
 
         canvas:
             Rectangle:
-                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/factor_corner.png'
+                source: './images/factor_corner.png'
                 pos: self.pos
                 size: self.size
 
@@ -476,7 +476,7 @@ ActionChoices:
 
                 TextInput:
                     id: input_term_to_factor
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     hint_text: "term to factor"
                     font_size: '11dp'
                     multiline: True
@@ -499,7 +499,7 @@ ActionChoices:
                 size_hint_y: 1.25
 
             InfoButtonSmall:
-                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_info.png")
+                on_release: root.open_pop("./images/replace_info.png")
 
             BoxLayout:
                 orientation: "horizontal"
@@ -515,7 +515,7 @@ ActionChoices:
 
         canvas:
             Rectangle:
-                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_corner.png'
+                source: './images/replace_corner.png'
                 pos: self.pos
                 size: self.size
 
@@ -541,7 +541,7 @@ ActionChoices:
 
                 TextInput:
                     id: indices_to_replace
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
 
                     hint_text: "indices to replace, list"
                     font_size: '11dp'
@@ -554,7 +554,7 @@ ActionChoices:
 
                 TextInput:
                     id: replacement_indices
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     hint_text: "replacement indices, list"
                     font_size: '11dp'
                     multiline: True
@@ -582,7 +582,7 @@ ActionChoices:
 
                 TextInput:
                     id: term_to_replace
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     hint_text: "term to replace"
                     font_size: '11dp'
                     multiline: True
@@ -594,7 +594,7 @@ ActionChoices:
 
                 TextInput:
                     id: replacement_term
-                    font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+                    font_name: './fonts/candara.ttf'
                     hint_text: "replacement term"
                     font_size: '11dp'
                     multiline: True
@@ -617,7 +617,7 @@ ActionChoices:
                 size_hint_y: 1.1
 
             InfoButtonSmall:
-                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/replace_info.png")
+                on_release: root.open_pop("./images/replace_info.png")
 
             BoxLayout:
                 orientation: "horizontal"
@@ -634,7 +634,7 @@ ActionChoices:
 
         canvas.before:
             Rectangle:
-                source: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/sort_corner.png'
+                source: './images/sort_corner.png'
                 pos: self.pos
                 size: self.size
 
@@ -707,7 +707,7 @@ ActionChoices:
                 size_hint_y: 1.9
 
             InfoButtonSmall:
-                on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/sort_info.png")
+                on_release: root.open_pop("./images/sort_info.png")
 
             BoxLayout:
                 orientation: "horizontal"
@@ -746,7 +746,7 @@ ActionChoices:
             id: latex_output
             size_hint_y: 1
 
-            font_name: '/Users/reaghbruce-robertson/PycharmProjects/Tensors/candara.ttf'
+            font_name: './fonts/candara.ttf'
             hint_text: "LaTeX equation output:"
             font_size: '13dp'
             multiline: True
@@ -755,7 +755,7 @@ ActionChoices:
         InfoButton:
             size_hint: .099, 0.55
             pos_hint: {"right":1,"top":0.76}
-            on_release: root.open_pop("/Users/reaghbruce-robertson/PycharmProjects/Tensors/output_info.png")
+            on_release: root.open_pop("./images/output_info.png")
 
     BoxLayout:
         orientation: "horizontal"
